@@ -8,6 +8,7 @@ const assertEqual = (actual, expected) => {
 
 const countLetters = function(sentence) {
   const results = {}
+  sentence = sentence.toLowerCase();
   for (const letter of sentence) {
     if (letter !== ' ') {
       if (!results[letter]) {
@@ -22,3 +23,4 @@ const countLetters = function(sentence) {
 
 countLetters('elephant');
 countLetters('hello my name is gerard')
+countLetters('THis one IS tEstIng for cApiTALS')

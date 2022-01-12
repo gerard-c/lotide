@@ -11,9 +11,13 @@ const countLetters = function(sentence) {
 
   for (const letter of sentence) {
     if (!results[letter]) {
-      console.log(letter)
+      results[letter] = 1
+    } else {
+      results[letter] += 1;
     }
-  }  
+  }
+  console.log(results);  
 };
 
 countLetters('elephant');
+countLetters('hello my name is gerard')

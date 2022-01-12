@@ -7,8 +7,13 @@ const assertEqual = (actual, expected) => {
 };
 
 const findKeyByValue = function(object, value) {
-  const keys = Object.keys(object)
-  console.log(keys);
+  const keys = Object.keys(object);
+  for (const key of keys) {
+    if (object[key] === value) {
+      return key;
+    }
+  }
+  
 }
 
 
@@ -18,4 +23,4 @@ const bestTVShowsByGenre = {
   drama:  "The Wire"
 };
 
-findKeyByValue(bestTVShowsByGenre, 'The Wire');
+console.log(findKeyByValue(bestTVShowsByGenre, 'Duck Dynasty'));

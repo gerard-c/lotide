@@ -14,13 +14,19 @@ const eqObjects = function(object1, object2) {
   const keys2 = Object.keys(object2);
   if (keys1.length !== keys2.length) {
     return false;
+  } else {
+    for (key of keys1) {
+      if (object1[key] !== object2[key]) {
+        return false;
+      }
+    }
+    return true;
   }
-
 };
 
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
-eqObjects(ab, ba); // => true
+console.log(eqObjects(ab, ba)); // => true
 
 const abc = { a: "1", b: "2", c: "3" };
-eqObjects(ab, abc); // => false
+console.log(eqObjects(ab, abc)); // => false

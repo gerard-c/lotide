@@ -10,8 +10,10 @@ const countLetters = function(sentence) {
   const results = {}
 
   for (const letter of sentence) {
-    console.log(letter);
-  }
+    if (!results[letter]) {
+      console.log(letter)
+    }
+  }  
 };
 
 countLetters('elephant');

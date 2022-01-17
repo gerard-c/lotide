@@ -1,6 +1,8 @@
 const middle = (array) => {
   let middleArray = [];
 
+  if (array.length === 0) return middleArray;
+
   const forEven = (array) => {
     middleArray.push(array[array.length / 2 - 1]);
     middleArray.push(array[(array.length / 2)]);

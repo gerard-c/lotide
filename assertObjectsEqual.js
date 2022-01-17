@@ -1,5 +1,6 @@
 const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect;
+  // eqArrays in defined in the function instead of required in order to account for inspect
   const eqArrays = (arr1, arr2) => {
     if (arr1.length !== arr2.length) {
       return console.log(`🤢🤢🤢 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
@@ -11,8 +12,10 @@ const assertObjectsEqual = function(actual, expected) {
     }
     return console.log(`😎😎😎 Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
   };
+
   const keys1 = Object.keys(actual);
   const keys2 = Object.keys(expected);
+  
   if (keys1.length !== keys2.length) {
     return console.log(`🤢🤢🤢 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
   } else {
@@ -28,13 +31,4 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
-const abc = { a: "1", b: "2", c: "3" };
-const ab = { a: "1", b: "2" };
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-const cd2 = { c: "1", d: ["2", 3, 4] };
-
-assertObjectsEqual(ab, ab);
-assertObjectsEqual(ab, abc);
-assertObjectsEqual(cd2, dc);
-assertObjectsEqual(cd, dc);
+module.exports = assertObjectsEqual;

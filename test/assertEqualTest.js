@@ -1,8 +1,8 @@
-const assertEqual = require("../assertEqual.js");
+const _ = require("../index");
 
-assertEqual('Lighthouse Labs', "Bootcamp");
-assertEqual(1, 1);
-assertEqual(4, 5);
-assertEqual(3.3, 3.3);
-assertEqual('dog', 'cat');
-assertEqual('fish', 'fish');
+_.assertEqual('Lighthouse Labs', "Bootcamp");
+_.assertEqual(1, 1);
+_.assertEqual(4, 5);
+_.assertEqual(3.3, 3.3);
+_.assertEqual('dog', 'cat');
+_.assertEqual('fish', 'fish');

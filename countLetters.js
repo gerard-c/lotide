@@ -12,4 +12,6 @@ const countLetters = function(sentence) {
   return results;
 };
 
+console.log(countLetters('MISSIssippi'));
+
 module.exports = countLetters;
